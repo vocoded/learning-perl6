@@ -1,2 +1,3 @@
 # learning-perl6
-A very early look at Perl6
+
+Adapted from the [Learning Go](https://github.com/vocoded/learning-go) set of exercises.
