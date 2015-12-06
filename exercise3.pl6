@@ -3,10 +3,9 @@
 sub get-file-matches($file, Str $term) {
   my $previousTerm = "";
   my @snippets = ();
-  for $file.lines -> $line {
-    chomp($line);
-	for split(/\s/, $line) -> $word {
-	  if lc($word) eq $term {
+  for map { .chomp }, $file.lines -> $line {
+	for map { my $s = $_; $s ~~ s:g/\W//; lc($s) }, split(/\s/, $line) -> $word {
+	  if $word eq $term {
 		@snippets.push(join(" ", [$previousTerm, $word]));
 	  }
 	  $previousTerm = $word;
