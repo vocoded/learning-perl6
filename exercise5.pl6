@@ -26,8 +26,10 @@ class FileTermCounter {
 
 sub main() {
   my $counter = FileTermCounter.new( source_file => "terms.txt" );
-
-  say $counter.get-terms();
+  my $sort = prompt "Sort terms? [y/n]: ";  
+  my @terms = $counter.get-terms();
+  
+  say ($sort ~~ /:i^y/ ?? @terms.sort !! @terms);
 }
 
 main();
