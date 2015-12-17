@@ -4,6 +4,8 @@ use lib '.';
 use utils;
 
 sub find_unique_substrings(Str $text, Int $length) {
+  return [$text] unless $text.chars > $length;
+  
   my %substrings = ();
   
   map { %substrings{$_} = True }, map { $text.substr($_, $length); }, (0..$text.chars-$length);
