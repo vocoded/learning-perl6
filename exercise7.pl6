@@ -4,6 +4,7 @@ use LWP::Simple;
 
 sub get_url(Str $url) {
   my $response = get($url);
+  $response;
 }
 
 sub main() {
