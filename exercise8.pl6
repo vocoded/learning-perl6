@@ -12,6 +12,7 @@ sub reverse(Str $text) {
   loop (my $i = $text.chars - 1; $i >=0; $i--) {
     $reverse ~= $text.substr($i, 1);
   }
+
   return $reverse;
 }
 
