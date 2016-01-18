@@ -9,7 +9,7 @@ sub reverse(Str $text) {
   # my $reverse = $text.split('').reverse().join('');
   my $reverse = '';
   
-  loop (my $i = $text.chars - 1; $i >=0; $i--) {
+  loop (my $i = $text.chars - 1; $i >= 0; $i--) {
     $reverse ~= $text.substr($i, 1);
   }
 
