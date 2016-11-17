@@ -26,7 +26,7 @@ class FileTermCounter {
 
 # Handles both Exercise 5 and Exercise 6 responsibilities
 sub main() {
-  my $counter = FileTermCounter.new( source_file => "terms.txt" );
+  my $counter = FileTermCounter.new(source_file => "terms.txt");
   my $sort = prompt "Sort terms? [y/n]: ";  
   my @terms = $counter.get-terms();
   
